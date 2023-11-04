@@ -17,3 +17,12 @@ services:
       interval: 0.5s
       timeout: 10s
       retries: 10
+  gateway: 
+    build: traefik
+    ports:
+      - 9000:80
+      - 9090:8080
+  auth-service:
+    build: auth-service
+    ports:
+      - 8181:8181

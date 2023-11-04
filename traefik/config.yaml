@@ -1,0 +1,27 @@
+http:
+  routers:
+    auth-service-router:
+      rule: "Host(`http://localhost:8181`)"
+      service: auth-service
+
+    main-service-router:
+      rule: "Host(`example.com`) && Path(`/api`)"
+      service: main-service
+      middlewares:
+        - forward-auth
+
+  services:
+    auth-service:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8181"
+
+    main-service:
+      loadBalancer:
+        servers:
+          - url: "http://main-service:80"
+
+  middlewares:
+    forward-auth:
+      forwardAuth:
+        address: "http://localhost:8181/api/v1/users/login"
