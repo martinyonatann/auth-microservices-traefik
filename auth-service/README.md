@@ -58,37 +58,6 @@ The DIP promotes high-level modules (e.g., use cases) to depend on abstractions 
 #### The diagram:
 ![golang clean architecture](clean-architecture.png)
 
-
-# 🦄 TO DO :
-
-- Application
-  - [x] [Go-Standards](https://github.com/golang-standards/project-layout) Project Layout
-  - [x] Environment Variable Configuration
-  - [x] Health-Check and Debug API
-  - [ ] Graceful Shutdown
-- Layered architecture
-  - [x] [SOLID Principle](https://en.wikipedia.org/wiki/SOLID)
-  - [x] Database Transaction
-- HTTP Server
-  - [x] [Echo framework](https://echo.labstack.com/)
-  - [x] Server Side Caching
-    - [ ] Cache but revalidate (Header `Cache-Control: no-cache`)
-    - [ ] Set Expiration Time (Header `Cache-Control: max-age=120`)
-  - [ ] Request ID in logger (Header `X-Request-Id: xxx`)
-- RESTful
-  - [x] Create Resource (`POST` verb)
-  - [x] Update Resource (`PUT` verb)
-  - [x] Partially Update Resource (`PATCH` verb)
-  - [ ] Find Resource (`GET` verb)
-    - [ ] Offset Pagination (Query param `?limit=10&page=1`)
-    - [ ] Sorting (Query param `?sort=fullname DESC,id DESC`)
-- Testing
-  - [x] Table Driven Test
-  - [x] Mocking
-- Others
-  - [x] Database migration and seed tool
-  - [x] Releaser
-
 ## 🏗️ How To Run
 
 setup environment and running on local
